@@ -1,0 +1,306 @@
+:root {
+    --primary-color: #B71C1C; /* Deep red */
+    --secondary-color: #D32F2F;
+    --accent-color: #FFD700; /* Gold */
+    --background-color: #FFF9F0;
+    --text-color: #2D2926;
+}
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #FFF9F0 0%, #FFEEE1 100%);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dragon-icon {
+    height: 100px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1em;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Enhanced Tab Styles */
+.tabs {
+    display: flex;
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.tab-button {
+    padding: 14px 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px;
+    margin: 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tab-button:hover {
+    background: #FFF3E0;
+    color: var(--primary-color);
+}
+
+.tab-button.active {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 8px rgba(183, 28, 28, 0.2);
+}
+
+.tab-content {
+    display: none;
+    padding: 30px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    margin-top: 20px;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Enhanced Chat Interface */
+.chat-box {
+    height: 500px;
+    overflow-y: auto;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #FBFBFB;
+    border-radius: 12px;
+    border: 1px solid #EEE;
+}
+
+.input-container {
+    display: flex;
+    gap: 15px;
+    padding: 0 10px;
+}
+
+.input-container input {
+    flex: 1;
+    padding: 14px 20px;
+    border: 2px solid #EEE;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.input-container input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(183, 28, 28, 0.1);
+}
+
+.input-container button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 0 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-container button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-1px);
+}
+
+/* Modern Message Bubbles */
+.question-section {
+    background: var(--primary-color);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 18px 18px 4px 18px;
+    margin: 12px 0;
+    max-width: 75%;
+    align-self: flex-end;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.question-section::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 0;
+    border: 10px solid transparent;
+    border-left-color: var(--primary-color);
+    border-top-color: var(--primary-color);
+}
+
+.answer-section {
+    background: white;
+    padding: 14px 20px;
+    border-radius: 18px 18px 18px 4px;
+    margin: 12px 0;
+    max-width: 75%;
+    align-self: flex-start;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    border: 1px solid #EEE;
+    position: relative;
+}
+
+.answer-section::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    border: 10px solid transparent;
+    border-right-color: white;
+    border-top-color: white;
+}
+
+/* Enhanced Input Areas */
+.input-area {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.input-area input, .input-area textarea {
+    flex: 1;
+    padding: 14px 20px;
+    border: 2px solid #EEE;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.input-area textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.input-area input:focus, .input-area textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(183, 28, 28, 0.1);
+    outline: none;
+}
+
+.input-area button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-area button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-1px);
+}
+
+/* Enhanced Output Boxes */
+.output-box {
+    background: white;
+    border: 1px solid #EEE;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 25px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Keep previous resource card styles and add */
+.resource-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .tabs {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .tab-button {
+        flex: 1 1 45%;
+        justify-content: center;
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .chat-box {
+        height: 400px;
+        padding: 15px;
+    }
+    
+    .question-section, .answer-section {
+        max-width: 90%;
+    }
+}
+
+/* Loading Animation */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
